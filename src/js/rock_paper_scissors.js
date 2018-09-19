@@ -1,10 +1,11 @@
-const { userScore } = 0;
-const { computerScore } = 0;
+const userScore = 0;
+const computerScore = 0;
 
+let game = new RockPaperScissors()
+// document.querySelector("#rock").addEventListener("click", () => game.play("rock"))
+// document.querySelector("#paper").addEventListener("click", () => game.play("paper"))
+// document.querySelector("#scissors").addEventListener("click", () => game.play("scissors"))  moved to HTML in order to test 
 
-function rockPaperScissors() {
-    console.log ("hello");
-    }
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -12,28 +13,32 @@ function getComputerChoice() {
     return choices [randomNumber];
 }
 
-function game(userChoice) {
-    const computerChoice = getComputerChoice();
-    switch (userChoice + computerChoice){
-    case "rock-scissors":
-    case "paper-rock":
-    case "scissors-paper":
-        console.log("You won!");
-        break;
-    case "rock-paper":
-    case "paper-scissors":
-    case "scissors-rock":
-        console.log("You lost!");
-        break;
-    case "rock-rock":
-    case "paper-paper":
-    case "scissors-scissors":
-        console.log("It's a tie!");
-        break;
+function RockPaperScissors() {
+    this.play = (userChoice) => {
+        console.log(userChoice)
+        const computerChoice = getComputerChoice();
+        switch (userChoice + "-" + computerChoice){
+            case "rock-scissors":
+            case "paper-rock":
+            case "scissors-paper":
+                console.log("You won!");
+                return ("You won!")
+                break;
+            case "rock-paper":
+            case "paper-scissors":
+            case "scissors-rock":
+                console.log("You lost!");
+                return ("You lost!")
+                break;
+            case "rock-rock":
+            case "paper-paper":
+            case "scissors-scissors":
+                console.log("It's a tie!");
+                return ("It's a tie!")
+                break;
+        }       
     }
-  }
-
-
+}
 
 
 
