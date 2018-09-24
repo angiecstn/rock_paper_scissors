@@ -4,12 +4,13 @@ const computerScore = 0;
 let game = new RockPaperScissors()
 // document.querySelector("#rock").addEventListener("click", () => game.play("rock"))
 // document.querySelector("#paper").addEventListener("click", () => game.play("paper"))
-// document.querySelector("#scissors").addEventListener("click", () => game.play("scissors"))  moved to HTML in order to test 
-
+// document.querySelector("#scissors").addEventListener("click", () => game.play("scissors"))  moved to HTML in order to test (doc is not defined)
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
-    const randomNumber = Math.floor(Math.random()*3);  //  -> .random to get random numbers between 0 and 3 .floor to get int and not floats
+    let random = Math.random(); // Returns number between 0 and 1
+    random = random * 3; // Multiply by 3 to get n = [0..3]
+    const randomNumber = Math.floor(random);  //  -> .random to get random numbers between 0 and 3 .floor to get int and not floats
     return choices [randomNumber];
 }
 

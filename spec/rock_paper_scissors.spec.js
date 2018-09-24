@@ -1,6 +1,6 @@
 const { RockPaperScissors } = require('./spec.helper')
 const mockMath = Object.create(global.Math);
-mockMath.random = () => 1;
+mockMath.random = () => 0; // computerchoice is always going to be rock
 global.Math = mockMath; 
 
 
@@ -11,50 +11,21 @@ describe('Rock Paper Scissors',() => {
         expect(rockPaperScissors).to.exist;
     });
 
-    describe('tie scenario', function () {
+    describe('scenarios', function () {
     
-        it('should return "it is a tie" on "scissors" "scissors"', () => {
-            expect(rockPaperScissors.play("rock", "rock")).to.eql("It's a tie!")
+        it('should return "it is a tie"', () => {
+            expect(rockPaperScissors.play("rock")).to.eql("It's a tie!")
         })
 
         it('should return tie scenario', () => {
-            expect(rockPaperScissors.play("paper", "paper")).to.eql("It's a tie!")
+            expect(rockPaperScissors.play("scissors")).to.eql("You lost!")
         })
 
         it('should return "it is a tie" on "scissors" "scissors"', () => {
-            expect(rockPaperScissors.play("scissors", "scissors")).to.eql("It's a tie!")
+            expect(rockPaperScissors.play("paper")).to.eql("You won!")
         });
     });
 
-
-    describe('user wins', function () {
-        it('should return player wins', () => {
-            expect(rockPaperScissors.play("rock", "scissors")).to.eql("You won!")
-        })
-
-        it('should return "You won!" on "paper" "rock"', () => {
-            expect(rockPaperScissors.play("paper", "rock")).to.eql("You won!")
-        })
-
-        it('should return "You won!" on "scissors" "paper"', () => {
-            expect(rockPaperScissors.play("scissors", "paper")).to.eql("You won!")
-        });
-    });
-
-
-    describe('computer wins', function () {
-        it('should return player looses', () => {
-            expect(rockPaperScissors.play("rock", "paper")).to.eql("You lost!")
-        })
-
-        it('should return "You lost!" on "paper" "scissors"', () => {
-            expect(rockPaperScissors.play("paper", "scissors")).to.eql("You lost!")
-        })
-
-        it('should return "You lost!" on "scissors" "rock"', () => {
-            expect(rockPaperScissors.play("scissors", "rock")).to.eql("You lost!")
-        });
-    });
 })
 
    
