@@ -1,4 +1,8 @@
 const { RockPaperScissors } = require('./spec.helper')
+const mockMath = Object.create(global.Math);
+mockMath.random = () => 1;
+global.Math = mockMath; 
+
 
 describe('Rock Paper Scissors',() => {
     let rockPaperScissors = new RockPaperScissors;
@@ -8,11 +12,12 @@ describe('Rock Paper Scissors',() => {
     });
 
     describe('tie scenario', function () {
-        it('should return "it is a tie" on "rock" "rock"', () => {
+    
+        it('should return "it is a tie" on "scissors" "scissors"', () => {
             expect(rockPaperScissors.play("rock", "rock")).to.eql("It's a tie!")
         })
 
-        it('should return "it is a tie" on "paper" "paper"', () => {
+        it('should return tie scenario', () => {
             expect(rockPaperScissors.play("paper", "paper")).to.eql("It's a tie!")
         })
 
@@ -23,7 +28,7 @@ describe('Rock Paper Scissors',() => {
 
 
     describe('user wins', function () {
-        it('should return "You won!" on "rock" "scissors"', () => {
+        it('should return player wins', () => {
             expect(rockPaperScissors.play("rock", "scissors")).to.eql("You won!")
         })
 
@@ -38,7 +43,7 @@ describe('Rock Paper Scissors',() => {
 
 
     describe('computer wins', function () {
-        it('should return "You lost!" on "rock" "paper"', () => {
+        it('should return player looses', () => {
             expect(rockPaperScissors.play("rock", "paper")).to.eql("You lost!")
         })
 
