@@ -2,9 +2,6 @@ const userScore = 0;
 const computerScore = 0;
 
 let game = new RockPaperScissors()
-// document.querySelector("#rock").addEventListener("click", () => game.play("rock"))
-// document.querySelector("#paper").addEventListener("click", () => game.play("paper"))
-// document.querySelector("#scissors").addEventListener("click", () => game.play("scissors"))  moved to HTML in order to test (doc is not defined)
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -12,6 +9,12 @@ function getComputerChoice() {
     random = random * 3; // Multiply by 3 to get n = [0..3]
     const randomNumber = Math.floor(random);  //  -> .random to get random numbers between 0 and 3 .floor to get int and not floats
     return choices [randomNumber];
+}
+
+function writeToDocument(text) {
+    if (global.window != null) {
+        document.querySelector("#result").innerHTML = text;
+    } 
 }
 
 function RockPaperScissors() {
@@ -22,19 +25,19 @@ function RockPaperScissors() {
             case "rock-scissors":
             case "paper-rock":
             case "scissors-paper":
-                console.log("You won!");
+                writeToDocument("You won!");
                 return ("You won!")
                 break;
             case "rock-paper":
             case "paper-scissors":
             case "scissors-rock":
-                console.log("You lost!");
+                writeToDocument("You lost!");
                 return ("You lost!")
                 break;
             case "rock-rock":
             case "paper-paper":
             case "scissors-scissors":
-                console.log("It is a tie!");
+                writeToDocument("It's a tie!");
                 return ("It is a tie!")
                 break;
         }       
