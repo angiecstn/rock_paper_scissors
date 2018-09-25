@@ -2,21 +2,35 @@ const { rock_paper_scissors } = require('chai');
 const BrowserHelpers = require('e2e_training_wheels');
 const browser = new BrowserHelpers();
  
-describe('sample UI test', () => {
-  before( async () => {
-    await browser.init();
-    await browser.visitPage('http://localhost:8080/');
+describe('User can input a value and get Rock Paper Scissors results', () => {
+  before(async () => {
+      await  browser.init()
+      await  browser.visitPage('http://localhost:8080/')
   });
- 
+
   beforeEach(async () => {
-    await browser.page.reload();
-  });
- 
-  after(async () => {
-    await browser.close();
-  });
- 
-  it('/* description inserted here */', async () => {
-    //  Write tour scenario  
-  });
-});
+      await  browser.page.reload();
+  })
+
+  after(async ()=> {
+      await  browser.close();
+  })
+})
+
+it('clicking on the "rock" button', async () => {
+  await browser.clickOnButton("input[value='Rock']")
+  let content = await browser.getContent("[id='display_answer']")
+  expect(content).to.eql('It is a tie!);
+})
+
+it('clicking on the "paper" button', async () => {
+  await browser.clickOnButton("input[value='Paper']")
+  let content = await browser.getContent("[id='display_answer']")
+  expect(content).to.eql('You won!');
+})
+
+it('clicking on the "scissors" button', async () => {
+  await browser.clickOnButton("input[value='Scissors']")
+  let content = await browser.getContent("[id='display_answer']")
+  expect(content).to.eql('You lost!');
+})

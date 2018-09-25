@@ -34,8 +34,8 @@ function RockPaperScissors() {
             case "rock-rock":
             case "paper-paper":
             case "scissors-scissors":
-                console.log("It's a tie!");
-                return ("It's a tie!")
+                console.log("It is a tie!");
+                return ("It is a tie!")
                 break;
         }       
     }
