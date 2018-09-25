@@ -8,13 +8,31 @@
 </head>
 <body>
     <div>
-    <button id="rock" onclick="game.play(&quot;rock&quot;)">Rock</button>
-    <button id="paper" onclick="game.play(&quot;paper&quot;)">Paper</button>
-    <button id="scissors" onclick="game.play(&quot;scissors&quot;)">Scissors</button>                      
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>                      
 </div>
-<div id="result">
-
-</div>
+<div id="result"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let rock = document.querySelector('#rock')
+        let paper = document.querySelector('#paper')
+        let scissors = document.querySelector('#scissors')
+        let displayDiv = document.querySelector('#result')
+        rock.addEventListener('click', () => { 
+            let res = game.play("rock")
+            displayDiv.innerHTML = res;
+        })
+        paper.addEventListener('click', () => { 
+            let res = game.play("paper")
+            displayDiv.innerHTML = res;
+        })
+        scissors.addEventListener('click', () => { 
+            let res = game.play("scissors")
+            displayDiv.innerHTML = res;
+        })
+    })
+</script>    
     <script type='text/javascript'  src="rock_paper_scissors.js"></script>
 </body>
 </html>

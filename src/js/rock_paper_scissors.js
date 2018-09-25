@@ -11,12 +11,6 @@ function getComputerChoice() {
     return choices [randomNumber];
 }
 
-function writeToDocument(text) {
-    if (global.window != null) {
-        document.querySelector("#result").innerHTML = text;
-    } 
-}
-
 function RockPaperScissors() {
     this.play = (userChoice) => {
         console.log(userChoice)
@@ -25,20 +19,17 @@ function RockPaperScissors() {
             case "rock-scissors":
             case "paper-rock":
             case "scissors-paper":
-                writeToDocument("You won!");
-                return ("You won!")
+                return "You won!";
                 break;
             case "rock-paper":
             case "paper-scissors":
             case "scissors-rock":
-                writeToDocument("You lost!");
-                return ("You lost!")
+                return "You lost!";
                 break;
             case "rock-rock":
             case "paper-paper":
             case "scissors-scissors":
-                writeToDocument("It's a tie!");
-                return ("It is a tie!")
+                return "It is a tie!";
                 break;
         }       
     }
