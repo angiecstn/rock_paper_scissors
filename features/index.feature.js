@@ -15,22 +15,23 @@ describe('User can input a value and get Rock Paper Scissors results', () => {
   after(async ()=> {
       await  browser.close();
   })
-})
 
   it('clicking on the "rock" button', async () => {
-    await browser.clickOnButton("input[value='Rock']")
+    await browser.clickOnButton("input[id='rock']")
     let content = await browser.getContent("[id='result']")
-    expect(content).to.eql(result);
+    expect(content).to.eq();
   })
-
+  
   it('clicking on the "paper" button', async () => {
-    await browser.clickOnButton("input[value='Paper']")
+    await browser.clickOnButton("input[id='paper']")
     let content = await browser.getContent("[id='result']")
-    expect(content).to.eql(result);
+    expect(content).to.eql('');
   })
-
+  
   it('clicking on the "scissors" button', async () => {
-    await browser.clickOnButton("input[value='Scissors']")
+    await browser.clickOnButton("input[id='scissors']")
     let content = await browser.getContent("[id='result']")
-    expect(content).to.eql(result);
+    expect(content).to.eql('');
   })
+})
+
