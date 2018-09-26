@@ -1,6 +1,6 @@
-const { rock_paper_scissors } = require('chai');
-const BrowserHelpers = require('e2e_training_wheels');
-const browser = new BrowserHelpers();
+const { RockPaperScissors } = require('../spec/spec.helper')
+const BrowserHelpers = require('e2e_training_wheels')
+const browser = new BrowserHelpers()
  
 describe('User can input a value and get Rock Paper Scissors results', () => {
   before(async () => {
