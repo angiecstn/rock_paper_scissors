@@ -1,7 +1,7 @@
 {
-  "name": "rps",
+  "name": "rock_paper_scissors",
   "version": "1.0.0",
-  "description": "rps webapp in JS",
+  "description": "rock paper scissors in js with npm testing",
   "main": "index.js",
   "scripts": {
     "test": "npm run features && npm run specs",
@@ -10,17 +10,9 @@
     "server": "superstatic src -p 3000",
     "stop-test-server": "lsof -ti tcp:$PORT | xargs kill"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/angiecstn/rock_paper_scissors.git"
-  },
-  "author": "AC",
+  "author": "Angelica_Costantin",
   "license": "ISC",
   "devDependencies": {
     "e2e_training_wheels": "0.0.15"
-  },
-  "bugs": {
-    "url": "https://github.com/angiecstn/rock_paper_scissors/issues"
-  },
-  "homepage": "https://github.com/angiecstn/rock_paper_scissors#readme"
+  }
 }
