@@ -15,6 +15,7 @@ I would like to input my choice ```
 In order to know if I won
 I would like to see the result of the game ```
 
+
 ##Prerequisites
 * npm install 
 * mocha

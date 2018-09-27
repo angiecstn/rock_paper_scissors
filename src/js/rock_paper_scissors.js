@@ -1,5 +1,3 @@
-// let game = new RockPaperScissors()
-
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     let random = Math.random(); // Returns number between 0 and 1
@@ -7,12 +5,6 @@ function getComputerChoice() {
     const randomNumber = Math.floor(random);  //  ->  .floor to get int and not floats
     return choices [randomNumber];
 }
-
-// function win() {
-//     userScore++;
-//     userScore_span.innerHTML = userScore;
-//     computerScore_Span = computerScore;
-// }
 
 function RockPaperScissors() {
     this.play = (userChoice) => {
