@@ -4,6 +4,18 @@ Simple rock, paper, scissors game in JS with unit and feature testing
 ## Games Rules
 The rules require that the person that plays the strongest “object” is the winner of the game. Rock beats scissors, scissors beats paper and paper beats rock.
 
+## Prerequisites
+* npm install 
+* mocha
+* superstatic
+
+## Built With
+* Javascript
+* Test ran with Chai and Mocha, CSS done with Tailwind package
+
+## Authors
+A.C.
+
 ## User Stories
 
 ```As a user
@@ -18,18 +30,6 @@ I would like to input my choice ```
 In order to know if I won
 I would like to see the result of the game ```
 
-## Prerequisites
-* npm install 
-* mocha
-* superstatic
 
-
-## Built With
-* Javascript
-* Test ran with Chai and Mocha, CSS done with Tailwind package
-
-
-## Authors
-A.C.
 
 
