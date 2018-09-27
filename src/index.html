@@ -8,21 +8,36 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body style="background-color:#BCDEFA; align-content: center;">
-    
-    <h1 class= "text-center font-mono"> Rock Paper Scissors</h1> </br></br>
-    <div class= "text-center">
-    <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full" value="rock" id="rock">Rock</button>
-    <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full" value="paper" id="paper">Paper</button>
-    <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full" value="scissors" id="scissors">Scissors</button>      
-    
+<script type='text/javascript'  src="./js/rock_paper_scissors.js"></script> 
 
-</div> </br></br>
+</br>
+</br>
+</br>
+</br>
+<div class="wrapper container height: 4rem bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden vertical-align: middle; align-content: center;">  
+    <h1 class= "text-center font-mono"> Rock Paper Scissors</h1> 
+    </br>
+    </br>
+    <div class= "text-center">
+            <img src="../res/images/rock.png" alt="an image" title="The title of this image" id="rock"/>
+            <img src="../res/images/paper.png" alt="an image" title="The title of this image" id="paper"/>
+            <img src="../res/images/scissors.png" alt="an image" title="The title of this image" id="scissors"/>
+  
+    </br>
+    </br>
+        <input class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full" type="button" value="Refresh Page" onClick="window.location.reload()"> 
+    </br>
+    </br>
+    </br>
 <div class= "text-center font-mono" id="result"></div>
+</div>
+
 <script type='text/javascript'  src="./js/rock_paper_scissors.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        let rock = document.querySelector('#rock')
-        let paper = document.querySelector('#paper')
+    document.addEventListener('DOMContentLoaded', () => { // wait for content to get loaded on page 
+        let game = new RockPaperScissors // create new game object 
+        let rock = document.querySelector('#rock') //querying the element to get
+        let paper = document.querySelector('#paper') //calling the buttons by their ID
         let scissors = document.querySelector('#scissors')
         let displayDiv = document.querySelector('#result')
         rock.addEventListener('click', () => { 
@@ -38,7 +53,13 @@
             displayDiv.innerHTML = res;
         })
     })
-</script>    
-   <script type='text/javascript'  src="./js/rock_paper_scissors.js"></script>
+</script>  
+</br>
+</br>
+<p class="text-center text-black text-xs">
+        ©2018 AC All rights reserved.
+      </p>
+</div> 
+
 </body>
 </html>
