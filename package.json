@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run features && npm run specs",
-    "features": "superstatic -p 8080 & mocha --timeout 100000 --recursive  --reporter=spec features ; PORT=8080 npm run stop-test-server ",
+    "features": "superstatic src/ -p 8080 & mocha --timeout 100000 --recursive  --reporter=spec features ; PORT=8080 npm run stop-test-server ",
     "specs": "mocha --recursive  --reporter=spec spec",
-    "server": "superstatic src/js -p 3000",
+    "server": "superstatic src/ -p 3000",
     "stop-test-server": "lsof -ti tcp:$PORT | xargs kill"
   },
-  "author": "Angelica_Costantin",
+  "author": "Angelica_Costantini",
   "license": "ISC",
   "devDependencies": {
     "e2e_training_wheels": "0.0.15"
