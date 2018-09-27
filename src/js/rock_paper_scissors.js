@@ -2,9 +2,6 @@ const userScore = 0;
 const computerScore = 0;
 
 let game = new RockPaperScissors()
-// document.querySelector("#rock").addEventListener("click", () => game.play("rock"))
-// document.querySelector("#paper").addEventListener("click", () => game.play("paper"))
-// document.querySelector("#scissors").addEventListener("click", () => game.play("scissors"))  moved to HTML in order to test (doc is not defined)
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -22,20 +19,17 @@ function RockPaperScissors() {
             case "rock-scissors":
             case "paper-rock":
             case "scissors-paper":
-                console.log("You won!");
-                return ("You won!")
+                return "You won!";
                 break;
             case "rock-paper":
             case "paper-scissors":
             case "scissors-rock":
-                console.log("You lost!");
-                return ("You lost!")
+                return "You lost!";
                 break;
             case "rock-rock":
             case "paper-paper":
             case "scissors-scissors":
-                console.log("It's a tie!");
-                return ("It's a tie!")
+                return "It is a tie!";
                 break;
         }       
     }
