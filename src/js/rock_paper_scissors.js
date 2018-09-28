@@ -1,8 +1,8 @@
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
-    let random = Math.random(); // Returns number between 0 and 1
-    random = random * 3; // Multiply by 3 to get n = [0..2] array
-    const randomNumber = Math.floor(random);  //  ->  .floor to get int and not floats
+    let random = Math.random(); 
+    random = random * 3; 
+    const randomNumber = Math.floor(random); 
     return choices [randomNumber];
 }
 
