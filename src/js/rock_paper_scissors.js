@@ -13,17 +13,17 @@ function RockPaperScissors() {
             case "rock-scissors":
             case "paper-rock":
             case "scissors-paper":
-                return "You won!";
+                return `You won! The computer choice is ${computerChoice}`;
                 break;
             case "rock-paper":
             case "paper-scissors":
             case "scissors-rock":
-                return "You lost!";
+                return `You lost!The computer choice is ${computerChoice}`;
                 break;
             case "rock-rock":
             case "paper-paper":
             case "scissors-scissors":
-                return "It is a tie!";
+                return `It is a tie!The computer choice is ${computerChoice}`;
                 break;
         }       
     }
