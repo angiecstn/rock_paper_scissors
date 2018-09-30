@@ -14,15 +14,15 @@ describe('Rock Paper Scissors',() => {
     describe('scenarios', function () {
     
         it('should return "it is a tie"', () => {
-            expect(rockPaperScissors.play("rock")).to.eql("It is a tie!")
+            expect(rockPaperScissors.play("rock")).to.eql("It is a tie! The computer choice is rock")
         })
 
         it('should return tie scenario', () => {
-            expect(rockPaperScissors.play("scissors")).to.eql("You lost!")
+            expect(rockPaperScissors.play("scissors")).to.eql("You lost! The computer choice is rock")
         })
 
         it('should return "it is a tie" on "scissors" "scissors"', () => {
-            expect(rockPaperScissors.play("paper")).to.eql("You won!")
+            expect(rockPaperScissors.play("paper")).to.eql("You won! The computer choice is rock")
         });
     });
 
