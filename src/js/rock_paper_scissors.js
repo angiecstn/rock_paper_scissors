@@ -1,14 +1,8 @@
-function getComputerChoice() {
-    const choices = ["rock", "paper", "scissors"];
-    let random = Math.random(); 
-    random = random * 3; 
-    const randomNumber = Math.floor(random); 
-    return choices [randomNumber];
-}
+const choices = ["rock", "paper", "scissors"]
 
 function RockPaperScissors() {
     this.play = (userChoice) => {
-        const computerChoice = getComputerChoice();
+        const computerChoice = choices[Math.floor(Math.random() *3)];
         switch (userChoice + "-" + computerChoice){
             case "rock-scissors":
             case "paper-rock":
