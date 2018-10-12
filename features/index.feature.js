@@ -1,6 +1,8 @@
 const { RockPaperScissors } = require('../spec/spec.helper')
 const BrowserHelpers = require('e2e_training_wheels')
 const browser = new BrowserHelpers()
+var sinon = require('sinon');
+
  
 describe('User can input a value and get Rock Paper Scissors results', () => {
   before(async () => {
